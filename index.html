@@ -15,6 +15,82 @@
     
 <style>
 
+.hero {
+    height: 100vh;
+    background: linear-gradient(
+                rgba(0,0,0,0.65),
+                rgba(0,0,0,0.75)
+              ),
+              url("images/banner.png") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-school {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.hero-main {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 110px;
+    letter-spacing: 8px;
+    color: var(--gold);
+    margin: 20px 0 30px 0;
+    line-height: 1.1;
+    text-shadow:
+        0 0 20px rgba(198,167,94,0.6),
+        0 0 50px rgba(198,167,94,0.4);
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+.hero-sub {
+    font-size: 24px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.hero-divider {
+    width: 140px;
+    height: 2px;
+    background: var(--gold);
+    margin: 40px auto;
+}
+
+.hero-motto {
+    font-size: 26px;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+}
+
+.hero-date {
+    margin-top: 30px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    padding: 8px 18px;
+    border: 1px solid var(--gold);
+    display: inline-block;
+    border-radius: 30px;
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 10px rgba(198,167,94,0.4); }
+    50% { text-shadow: 0 0 30px rgba(198,167,94,0.8); }
+    100% { text-shadow: 0 0 10px rgba(198,167,94,0.4); }
+}
+
 .eb-coming-soon{
     margin-top: 15px;
     font-family: 'Bebas Neue', sans-serif;
@@ -441,20 +517,6 @@ nav a:hover::after{width:100%;}
     padding:20px;
 }
 
-.hero h1{
-    font-family:'Bebas Neue', sans-serif;
-    font-size:64px;
-    letter-spacing:3px;
-    line-height:1.1;
-    
-}
-
-.hero p{
-    font-size:24px;
-    margin-top:20px;
-    letter-spacing:2px;
-}
-
 /* SECTIONS */
 section{
     padding:80px 10%;
@@ -764,9 +826,13 @@ section h2{
 </nav>
 
 <div class="hero">
-    <div>
-        <h1>The Bishop's Co-Ed School, Undri Model United Nations, 2026</h1>
-        <p>Debate. Demur. Deliver.</p>
+    <div class="hero-content">
+        <p class="hero-school">The Bishop's Co-Ed School, Undri</p>
+        <h1 class="hero-main">TBSUMUN 2026</h1>
+        <p class="hero-sub">Model United Nations</p>
+        <div class="hero-divider"></div>
+        <p class="hero-motto">Debate. Demur. Deliver.</p>
+        <p class="hero-date">11th & 12th July 2026</p>
     </div>
 </div>
 
@@ -1228,6 +1294,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </footer>
 </body>
 </html>
+
 
 
 

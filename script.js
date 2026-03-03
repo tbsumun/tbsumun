@@ -106,30 +106,46 @@ document.addEventListener("DOMContentLoaded", function () {
    const toggleBtn = document.getElementById("secretariatToggle");
 const sec2026 = document.getElementById("sec2026");
 const sec2025 = document.getElementById("sec2025");
-const section = document.getElementById("secretariat");
+const secretariatSection = document.getElementById("secretariat");
 
 toggleBtn.addEventListener("click", () => {
 
-    if (sec2026.classList.contains("hidden")) {
-        sec2026.classList.remove("hidden");
-        sec2025.classList.add("hidden");
-        toggleBtn.textContent = "TBSUMUN 2025 Secretariat";
-    } else {
-        sec2026.classList.add("hidden");
-        sec2025.classList.remove("hidden");
-        toggleBtn.textContent = "TBSUMUN 2026 Secretariat";
-    }
-
-    // 🔹 Accurate Scroll Fix
-    const navbar = document.querySelector("nav");
-    const navbarHeight = navbar.offsetHeight;
-
-    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-
-    window.scrollTo({
-        top: sectionTop - navbarHeight - 10,
-        behavior: "smooth"
+    
+    secretariatSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
     });
+
+    setTimeout(() => {
+
+        let currentSection = sec2026.classList.contains("hidden") ? sec2025 : sec2026;
+        let nextSection = sec2026.classList.contains("hidden") ? sec2026 : sec2025;
+
+    
+        currentSection.classList.add("fade-out");
+
+        setTimeout(() => {
+
+            currentSection.classList.add("hidden");
+            currentSection.classList.remove("fade-out");
+
+            nextSection.classList.remove("hidden");
+            nextSection.classList.add("fade-in");
+
+            // Update button text
+            if (nextSection === sec2026) {
+                toggleBtn.textContent = "TBSUMUN 2025 Secretariat";
+            } else {
+                toggleBtn.textContent = "TBSUMUN 2026 Secretariat";
+            }
+
+            setTimeout(() => {
+                nextSection.classList.remove("fade-in");
+            }, 400);
+
+        }, 400);
+
+    }, 500); // scroll wait time
 
 });
 

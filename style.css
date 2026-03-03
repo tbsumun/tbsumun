@@ -1,4 +1,12 @@
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
 
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
 
 .secretariat-wrapper {
     text-align: center;
@@ -766,6 +774,11 @@ section h2{
     cursor: default;
 }
 
+   #sec2026,
+     #sec2025 {
+    transition: opacity 0.4s ease;
+}
+
 /* RESPONSIVE Mobile Ver. Fix */
 @media (max-width:1024px){
 
@@ -841,6 +854,8 @@ section h2{
         width: 200px;
         height: 200px;
     }
+
+
 
 }
 

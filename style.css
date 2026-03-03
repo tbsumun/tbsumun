@@ -1,4 +1,44 @@
 
+
+.secretariat-wrapper {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+}
+
+.secretariat-group {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.secretariat-group.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.secretariat-btn {
+    border: none;  
+    margin-top: 30px;
+    padding: 12px 28px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px; 
+    background-color: var(--gold);
+    color: var(--maroon);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secretariat-btn:hover {
+     background-color: var(--maroon);
+    color: var(--gold);
+    transform: scale(1.05);
+}
+
 /* HERO TITLE */
 .hero-content {
     text-align: center;
@@ -387,6 +427,7 @@ body{
     background:#111;   /* changed from var(--light) */
     color:white;
     padding-top:90px;
+    
 }
 
 /* LOADER */
@@ -434,10 +475,10 @@ nav.scrolled{
     color:white;
 }
 
-.logo-title h1{
-    font-family:'Bebas Neue', sans-serif;
-    letter-spacing:2px;
-    font-size:32px;
+ .logo-title h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .logo-title img{
@@ -711,6 +752,20 @@ section h2{
     color:var(--gold);
 }
 
+/* Disable flip for 2025 cards */
+.static-card {
+    transform: none !important;
+}
+
+.static-card:hover {
+    transform: none !important;
+}
+
+/* Optional: remove pointer cursor */
+.static-card {
+    cursor: default;
+}
+
 /* RESPONSIVE Mobile Ver. Fix */
 @media (max-width:1024px){
 
@@ -788,3 +843,4 @@ section h2{
     }
 
 }
+

@@ -1,7 +1,17 @@
 
-window.addEventListener("load",function(){
-    document.getElementById("loader").classList.add("fade-out");
-    setTimeout(()=>{document.getElementById("loader").style.display="none";},800);
+window.addEventListener("load", function(){
+
+    const loader = document.getElementById("loader");
+
+    loader.classList.add("fade-out");
+
+    document.body.classList.remove("loading");
+    document.documentElement.classList.remove("loading");
+
+    setTimeout(()=>{
+        loader.style.display="none";
+    },800);
+
 });
 
 function toggleMenu(){
